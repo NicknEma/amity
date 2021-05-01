@@ -1,6 +1,6 @@
 using System;
 
-namespace Amity
+namespace Amity.Time
 {
     public class Timer
     {

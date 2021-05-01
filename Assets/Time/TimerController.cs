@@ -1,7 +1,7 @@
 using UnityEngine.Events;
 using UnityEngine;
 
-namespace Amity
+namespace Amity.Time
 {
     public class TimerController : MonoBehaviour
     {
@@ -19,7 +19,7 @@ namespace Amity
 
 		private void Update() {
 			if (isTimerActive && timer != null) {
-				timer.Tick(Time.deltaTime);
+				timer.Tick(UnityEngine.Time.deltaTime);
 				if (timer.RemainingTime == 0f)
 					isTimerActive = false;
 			}

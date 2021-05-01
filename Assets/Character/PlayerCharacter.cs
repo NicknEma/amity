@@ -11,7 +11,7 @@ namespace Amity
 		[Header("Physics")]
 		public OverlapChecker2D footHitbox;
 		public BoxCollider2D boxCollider;
-		public Rigidbody2D rigidbody;
+		public new Rigidbody2D rigidbody;
 
 		[Header("Jumping")]
 		public float jumpForce;
@@ -31,7 +31,11 @@ namespace Amity
 		}
 
 		private void Update() {
-			SwitchTo(currentState.OnUpdate());
+			SwitchTo(currentState.OnLogicUpdate());
+		}
+
+		private void FixedUpdate() {
+			SwitchTo(currentState.OnPhysicsUpdate());
 		}
 
 		private void OnJump(InputValue inputValue) {

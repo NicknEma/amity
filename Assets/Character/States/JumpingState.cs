@@ -12,7 +12,7 @@ namespace Amity
 			character.rigidbody.AddForce(new Vector2(0f, character.jumpForce), ForceMode2D.Impulse);
 		}
 
-		public override CharacterState OnUpdate() {
+		public override CharacterState OnPhysicsUpdate() {
 			if (character.rigidbody.velocity.y < 0f)
 				return new FallingState(character);
 			return null;

@@ -8,7 +8,7 @@ namespace Amity
 			NotifyListeners(this);
 		}
 
-		public override CharacterState OnUpdate() {
+		public override CharacterState OnPhysicsUpdate() {
 			if (character.footHitbox.isHitting)
 				return new GroundedState(character);
 			return null;
