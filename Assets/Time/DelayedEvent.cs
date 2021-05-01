@@ -1,21 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using UnityEngine.Events;
+using System.Timers;
 
 namespace Amity
 {
-    public class DelayedEvent : MonoBehaviour
+	[System.Serializable]
+	public class DelayedEvent
     {
-        // Start is called before the first frame update
-        void Start()
-        {
-        
-        }
+		public float delay = 5f;
+		public UnityEvent @event;
 
-        // Update is called once per frame
-        void Update()
-        {
-        
-        }
+		public void Invoke() {
+			Timer timer = new Timer(delay);
+			timer.Elapsed += EndInvoke;
+			timer.AutoReset = false;
+			timer.Enabled = true;
+		}
+
+		private void EndInvoke(object source, ElapsedEventArgs e) { @event.Invoke(); }
     }
 }
