@@ -9,8 +9,12 @@ namespace Amity
 		public PlayerInput playerInput;
 
 		[Header("Physics")]
+		public OverlapChecker2D footHitbox;
 		public BoxCollider2D boxCollider;
 		public Rigidbody2D rigidbody;
+
+		[Header("Jumping")]
+		public float jumpForce;
 
 		public CharacterState currentState;
 
@@ -28,6 +32,10 @@ namespace Amity
 
 		private void Update() {
 			SwitchTo(currentState.OnUpdate());
+		}
+
+		private void OnJump(InputValue inputValue) {
+			SwitchTo(currentState.OnJump(inputValue));
 		}
 
 		private void SwitchTo(CharacterState newState) {

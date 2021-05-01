@@ -1,4 +1,4 @@
-using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Amity
 {
@@ -8,6 +8,11 @@ namespace Amity
 
 		public override void OnEnter() {
 			NotifyListeners(this);
+		}
+
+		public override CharacterState OnJump(InputValue inputValue = null) {
+			// TODO: Implement coyote time
+			return new JumpingState(character);
 		}
 	}
 }

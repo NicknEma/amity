@@ -1,5 +1,3 @@
-using UnityEngine;
-
 namespace Amity
 {
     public class FallingState : CharacterState
@@ -8,6 +6,12 @@ namespace Amity
 
 		public override void OnEnter() {
 			NotifyListeners(this);
+		}
+
+		public override CharacterState OnUpdate() {
+			if (character.footHitbox.isHitting)
+				return new GroundedState(character);
+			return null;
 		}
 	}
 }

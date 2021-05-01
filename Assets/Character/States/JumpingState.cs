@@ -1,3 +1,4 @@
+using UnityEngine.InputSystem;
 using UnityEngine;
 
 namespace Amity
@@ -8,6 +9,13 @@ namespace Amity
 
 		public override void OnEnter() {
 			NotifyListeners(this);
+			character.rigidbody.AddForce(new Vector2(0f, character.jumpForce), ForceMode2D.Impulse);
+		}
+
+		public override CharacterState OnUpdate() {
+			if (character.rigidbody.velocity.y < 0f)
+				return new FallingState(character);
+			return null;
 		}
 	}
 }
