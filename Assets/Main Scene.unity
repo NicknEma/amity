@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 13519835}
   - component: {fileID: 13519834}
+  - component: {fileID: 13519836}
   m_Layer: 6
   m_Name: Blok
   m_TagString: Untagged
@@ -180,6 +181,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &13519836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13519833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52853753325efba4d92e04f57156f332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lineColor: {r: 0.4, g: 0.7490196, b: 0.5019608, a: 1}
+  targets:
+  - {fileID: 13519834}
 --- !u!1 &442516586
 GameObject:
   m_ObjectHideFlags: 0
@@ -413,6 +429,7 @@ MonoBehaviour:
   boxCollider: {fileID: 772111696}
   rigidbody: {fileID: 772111695}
   jumpForce: 13
+  runSpeed: 10
 --- !u!4 &772111699
 Transform:
   m_ObjectHideFlags: 0
@@ -466,7 +483,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lineColor: {r: 0.4, g: 0.7490196, b: 0.5019608, a: 1}
-  targets: []
+  targets:
+  - {fileID: 772111696}
 --- !u!1 &1937105897
 GameObject:
   m_ObjectHideFlags: 0

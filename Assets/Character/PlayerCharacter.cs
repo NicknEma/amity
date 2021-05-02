@@ -16,6 +16,9 @@ namespace Amity
 		[Header("Jumping")]
 		public float jumpForce;
 
+		[Header("Running")]
+		public float runSpeed;
+
 		public CharacterState currentState;
 
 		private void Awake() {
@@ -40,6 +43,10 @@ namespace Amity
 
 		private void OnJump(InputValue inputValue) {
 			SwitchTo(currentState.OnJump(inputValue));
+		}
+
+		private void OnRun(InputValue inputValue) {
+			SwitchTo(currentState.OnRun(inputValue));
 		}
 
 		private void SwitchTo(CharacterState newState) {

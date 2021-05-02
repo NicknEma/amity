@@ -17,5 +17,11 @@ namespace Amity
 				return new FallingState(character);
 			return null;
 		}
+
+		public override CharacterState OnRun(InputValue inputValue = null) {
+			Vector2 speed = new Vector2(character.runSpeed * inputValue.Get<float>(), character.rigidbody.velocity.y);
+			character.rigidbody.velocity = speed;
+			return null;
+		}
 	}
 }

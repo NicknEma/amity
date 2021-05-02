@@ -13,7 +13,8 @@ namespace Amity
 		public BoxCollider2D[] targets;
 
 		private void Awake() {
-			targets = new BoxCollider2D[0];
+			if (targets == null)
+				targets = new BoxCollider2D[0];
 		}
 
 		private void Update() {
