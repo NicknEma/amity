@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Amity
 {
-    public class PlayerCharacter : MonoBehaviour
+	public class PlayerCharacter : MonoBehaviour
     {
 		[Header("Input")]
 		public PlayerInput playerInput;
@@ -18,6 +18,9 @@ namespace Amity
 
 		[Header("Running")]
 		public float runSpeed;
+
+		[Header("Twin")]
+		public bool hasTwin;
 
 		public CharacterState currentState;
 

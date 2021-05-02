@@ -11,6 +11,10 @@ namespace Amity
 			NotifyListeners(this);
 		}
 
+		public override CharacterState OnCrouch(InputValue inputValue = null) {
+			return new CrouchingState(character);
+		}
+
 		public override CharacterState OnJump(InputValue inputValue = null) {
 			return new JumpingState(character);
 		}
