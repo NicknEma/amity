@@ -16,8 +16,8 @@ namespace Amity
 		public virtual void OnExit() { ; }
 		public virtual CharacterState OnLogicUpdate() { return null; }
 		public virtual CharacterState OnPhysicsUpdate() { return null; }
-		public virtual CharacterState OnCrouch(InputValue inputValue = null) { return null; }
-		public virtual CharacterState OnJump(InputValue inputValue = null) { return null; }
-		public virtual CharacterState OnRun(InputValue inputValue = null) { return null; }
+		public virtual CharacterState OnCrouch() { return null; }
+		public virtual CharacterState OnJump() { return null; }
+		public virtual CharacterState OnRun(int direction) { return null; }
 	}
 }

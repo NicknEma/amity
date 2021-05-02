@@ -206,6 +206,7 @@ GameObject:
   m_Component:
   - component: {fileID: 442516587}
   - component: {fileID: 442516590}
+  - component: {fileID: 442516591}
   - component: {fileID: 442516589}
   - component: {fileID: 442516588}
   m_Layer: 0
@@ -239,7 +240,7 @@ Animator:
   m_GameObject: {fileID: 442516586}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 34f1752b12e94ec4d90e7aa6ffdcdcb8, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -313,6 +314,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character: {fileID: 772111698}
   animator: {fileID: 442516588}
+--- !u!114 &442516591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 442516586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f8862c2531a84143b565ce6f9d29ec2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 772111695}
+  onHorizontalVelocityChanged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 442516590}
+        m_TargetAssemblyTypeName: Amity.CharacterGraphics, Assembly-CSharp
+        m_MethodName: SetFloat
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &772111694
 GameObject:
   m_ObjectHideFlags: 0
@@ -430,6 +459,7 @@ MonoBehaviour:
   rigidbody: {fileID: 772111695}
   jumpForce: 13
   runSpeed: 10
+  hasTwin: 0
 --- !u!4 &772111699
 Transform:
   m_ObjectHideFlags: 0

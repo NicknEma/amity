@@ -13,15 +13,13 @@ namespace Amity
 			character.currentState.onStateEnter += PlayStateAnimation;
 		}
 
+		public void SetFloat(string name, float value) {
+			animator.SetFloat(name, value);
+		}
+
 		private void PlayStateAnimation(CharacterState state) {
 			string stateName = state.GetType().Name;
-			animator.SetTrigger(stateName);
+			animator.Play(stateName);
 		}
 	}
 }
-
-/*
-var @switch = new Dictionary<string, Action> {
-				{ "", () => { } }
-			};
-*/

@@ -1,4 +1,3 @@
-using UnityEngine.InputSystem;
 using UnityEngine;
 
 namespace Amity
@@ -18,8 +17,8 @@ namespace Amity
 			return null;
 		}
 
-		public override CharacterState OnRun(InputValue inputValue = null) {
-			Vector2 speed = new Vector2(character.runSpeed * inputValue.Get<float>(), character.rigidbody.velocity.y);
+		public override CharacterState OnRun(int direction) {
+			Vector2 speed = new Vector2(character.runSpeed * direction, character.rigidbody.velocity.y);
 			character.rigidbody.velocity = speed;
 			return null;
 		}

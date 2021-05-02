@@ -1,5 +1,6 @@
 using UnityEngine.InputSystem;
 using UnityEngine;
+using System;
 
 namespace Amity
 {
@@ -24,6 +25,10 @@ namespace Amity
 
 		public CharacterState currentState;
 
+		public event Action<int> onDirectionChanged;
+
+		private int currentDirection;
+
 		private void Awake() {
 			currentState = new GroundedState(this);
 		}
@@ -44,12 +49,16 @@ namespace Amity
 			SwitchTo(currentState.OnPhysicsUpdate());
 		}
 
-		private void OnJump(InputValue inputValue) {
-			SwitchTo(currentState.OnJump(inputValue));
+		private void OnJump() {
+			SwitchTo(currentState.OnJump());
 		}
 
 		private void OnRun(InputValue inputValue) {
-			SwitchTo(currentState.OnRun(inputValue));
+			int newDirection = inputValue.Get<int>();
+			if (newDirection == currentDirection)
+				return;
+			onDirectionChanged?.Invoke(newDirection);
+			SwitchTo(currentState.OnRun(newDirection));
 		}
 
 		private void SwitchTo(CharacterState newState) {
