@@ -13,6 +13,7 @@ namespace Amity
 
 		public override CharacterState OnPhysicsUpdate() {
             if (character.footHitbox.isHitting) {
+                VirtualCameraShaker.Instance.Shake(.2f, .2f);
                 if (character.hasTwin)
                     return new HiddenState(character);
                 return new GroundedState(character);
