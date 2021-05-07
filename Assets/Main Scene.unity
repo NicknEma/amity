@@ -479,7 +479,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   offset: {x: 0, y: -0.05}
-  size: {x: 0.8, y: 1}
+  size: {x: 0.95, y: 1}
   onOverlapEnter:
     m_PersistentCalls:
       m_Calls: []

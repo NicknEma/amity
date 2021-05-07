@@ -49,6 +49,10 @@ namespace Amity
 			SwitchTo(currentState.OnPhysicsUpdate());
 		}
 
+		private void OnCrouch() {
+			SwitchTo(currentState.OnCrouch());
+		}
+
 		private void OnJump() {
 			SwitchTo(currentState.OnJump());
 		}

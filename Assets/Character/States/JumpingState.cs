@@ -17,6 +17,10 @@ namespace Amity
 			return null;
 		}
 
+		public override CharacterState OnCrouch() {
+			return new PoundingState(character);
+		}
+
 		public override CharacterState OnRun(int direction) {
 			Vector2 speed = new Vector2(character.runSpeed * direction, character.rigidbody.velocity.y);
 			character.rigidbody.velocity = speed;

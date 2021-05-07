@@ -6,6 +6,14 @@
             "id": "a80da9a3-4d59-4068-b293-abf460d274cf",
             "actions": [
                 {
+                    "name": "Crouch",
+                    "type": "Button",
+                    "id": "7db0ec7f-b57a-47cf-9b55-5953b04231c0",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
                     "name": "Jump",
                     "type": "Button",
                     "id": "7c91bb9a-8d3d-4a6a-9e7d-e3bfb7953f7d",
@@ -18,14 +26,6 @@
                     "type": "Value",
                     "id": "22dee4a0-4b4c-43f3-8072-e9639f519606",
                     "expectedControlType": "Axis",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "Crouch",
-                    "type": "Button",
-                    "id": "7db0ec7f-b57a-47cf-9b55-5953b04231c0",
-                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
                 }
