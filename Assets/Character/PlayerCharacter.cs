@@ -54,9 +54,10 @@ namespace Amity
 		}
 
 		private void OnRun(InputValue inputValue) {
-			int newDirection = inputValue.Get<int>();
+			int newDirection = (int) inputValue.Get<float>();
 			if (newDirection == currentDirection)
 				return;
+			currentDirection = newDirection;
 			onDirectionChanged?.Invoke(newDirection);
 			SwitchTo(currentState.OnRun(newDirection));
 		}
