@@ -6,6 +6,10 @@ namespace Amity
 {
 	public class PlayerCharacter : MonoBehaviour
     {
+		[Header("General")]
+		public Animator animator;
+		public AudioHandler audioHandler;
+		
 		[Header("Input")]
 		public PlayerInput playerInput;
 

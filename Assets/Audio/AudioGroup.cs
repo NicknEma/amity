@@ -2,33 +2,36 @@ using UnityEngine;
 
 namespace Amity
 {
-    [CreateAssetMenu(order = 51)]
-    public class AudioObject : ScriptableObject
+    [System.Serializable]
+    public class AudioGroup
     {
-		public enum SelectMode { Random, Sequence }
-		public SelectMode selectMode;
+        public AudioSelectMode selectMode;
 
-		[Range(0.0f, 1.0f)]
-		public float volume;
-		public AudioClip[] clips;
+        [Range(0.0f, 1.0f)]
+        public float volume;
+        public AudioClip[] clips;
 
 		private int lastPlayed = -1;
 
 		public void PlayClip(AudioSource source) {
+			
 			int index = -1;
 			switch (selectMode) {
-				case SelectMode.Random: {
+				case AudioSelectMode.Random: {
 					do {
 						index = Random.Range(0, clips.Length);
-					} while (index != lastPlayed);
+					} while (index == lastPlayed);
 					break;
 				}
-				case SelectMode.Sequence: {
+				case AudioSelectMode.Sequence: {
 					lastPlayed++;
+					if (lastPlayed == clips.Length)
+						lastPlayed = 0;
 					index = lastPlayed;
 					break;
 				}
 			}
+
 			source.PlayOneShot(clips[index], volume);
 		}
 	}
