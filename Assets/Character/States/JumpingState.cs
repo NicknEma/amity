@@ -9,7 +9,7 @@ namespace Amity
 		public override void OnEnter() {
 			NotifyListeners(this);
 			character.rigidbody.AddForce(new Vector2(0f, character.jumpForce), ForceMode2D.Impulse);
-			character.audioHandler.PlayGlobal("Jump");
+			character.audioHandler.PlaySelected("Jump");
 		}
 
 		public override CharacterState OnPhysicsUpdate() {

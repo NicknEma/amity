@@ -9,13 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fae440ba8f960574ab877eb7ec947bad, type: 3}
+  m_Script: {fileID: 11500000, guid: 3bb8031b23d7de14fbcc444fbd64762e, type: 3}
   m_Name: Test1
   m_EditorClassIdentifier: 
-  assetName: Test1
-  group:
-    selectMode: 1
-    volume: 0.5
-    clips:
-    - {fileID: 8300000, guid: 349119d80b0c0aa4a9f17d5b2e49a466, type: 3}
-    - {fileID: 8300000, guid: d8100fa4cee26d147b912b1649972e0a, type: 3}
+  selectMode: 1
+  volume: 0.5
+  clips:
+  - {fileID: 8300000, guid: 349119d80b0c0aa4a9f17d5b2e49a466, type: 3}
+  - {fileID: 8300000, guid: d8100fa4cee26d147b912b1649972e0a, type: 3}
