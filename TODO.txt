@@ -1,0 +1,34 @@
+CLIPPING ALGORITHM
+- Implement Path.insertAfter() and test
+- Implement tryIntersect() and test
+- Test checkAlphas()
+- Finish Phase 1 and test [a lot]
+- - -
+- Implement isPointInside() and test
+- Implement markEntries() and test
+- Test Phase 2
+- - -
+- Implement third phase and test
+
+CLIPPABLE COLLIDER
+- Translate algorithm to C#
+- Implement 'edge closer'
+- Implement in-scene collider drawer
+
+AUDIO
+- Refactor AudioGroups management, use asset name as id
+
+ANIMATION
+- Learn OpenToonz
+- Make quick temp animations
+
+CHARACTER FSM
+- Add calls to Audio and Anim functions
+- 
+
+GAMEPLAY
+- Implement Move Trigger (rough)
+
+CAMERA
+- Implement Shake Trigger
+- Refactor Camera Shake API
