@@ -8,7 +8,7 @@ namespace Amity
     {
 		[Header("General")]
 		public Animator animator;
-		public AudioEmitter audioHandler;
+		public AudioEmitter audioEmitter;
 		
 		[Header("Input")]
 		public PlayerInput playerInput;
