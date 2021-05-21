@@ -16,15 +16,16 @@ CLIPPABLE COLLIDER
 - Implement in-scene collider drawer
 
 AUDIO
-- Refactor AudioGroups management, use asset name as id
+- [DONE] Refactor AudioGroups management, use asset name as id
+- Implement music fading
 
 ANIMATION
-- Learn OpenToonz
-- Make quick temp animations
+- [DONE] Start learning OpenToonz
+- [DONE] Make quick temp animations
+- [DONE] Add Character Animator states and transitions
 
 CHARACTER FSM
-- Add calls to Audio and Anim functions
-- 
+- [DONE] Add calls to Audio and Anim functions
 
 GAMEPLAY
 - Implement Move Trigger (rough)
