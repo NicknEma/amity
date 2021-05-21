@@ -840,11 +840,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87724114a2e4f90499bb75fd5a903eca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioAssets:
-  - assetName: Footsteps
-    group: {fileID: 11400000, guid: 4b96b5d915a254e4a91575a40cafa239, type: 2}
-  - assetName: Jumps
-    group: {fileID: 11400000, guid: 49d066b57ee3b8848b9f70ec778e975d, type: 2}
+  output: {fileID: 0}
+  audioGroups: []
 --- !u!1 &2002903339
 GameObject:
   m_ObjectHideFlags: 0
