@@ -6,17 +6,13 @@ namespace Amity
 	public abstract class CharacterState {
 		protected PlayerCharacter character;
 
-		public event Action<CharacterState> onStateEnter;
-
 		public CharacterState(PlayerCharacter character) { this.character = character; }
-
-		protected void NotifyListeners(CharacterState state) { onStateEnter?.Invoke(state); }
 
 		public virtual void OnEnter() { ; }
 		public virtual void OnExit() { ; }
 		public virtual CharacterState OnLogicUpdate() { return null; }
 		public virtual CharacterState OnPhysicsUpdate() { return null; }
-		public virtual CharacterState OnCrouch() { return null; }
+		public virtual CharacterState OnPound() { return null; }
 		public virtual CharacterState OnJump() { return null; }
 		public virtual CharacterState OnRun(int direction) { return null; }
 	}

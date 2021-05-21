@@ -6,7 +6,7 @@
             "id": "a80da9a3-4d59-4068-b293-abf460d274cf",
             "actions": [
                 {
-                    "name": "Crouch",
+                    "name": "Pound",
                     "type": "Button",
                     "id": "7db0ec7f-b57a-47cf-9b55-5953b04231c0",
                     "expectedControlType": "Button",
@@ -82,7 +82,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "Crouch",
+                    "action": "Pound",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

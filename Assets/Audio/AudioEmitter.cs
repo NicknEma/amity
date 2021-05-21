@@ -34,7 +34,7 @@ namespace Amity
         [SerializeField, Space(5), Tooltip("Array of Audio Groups that the Game Object will be able to play.")]
         private AudioGroup[] audioGroups;
 
-        private Dictionary<string, AudioGroup> clips;
+        private Dictionary<string, AudioGroup> clips = new Dictionary<string, AudioGroup>();
         
         private AudioSource source;
 
@@ -78,7 +78,6 @@ namespace Amity
         }
 
 		private void InitializeDictionary() {
-            clips = new Dictionary<string, AudioGroup>();
             for (int i = 0; i < audioGroups.Length; i++)
                 clips.Add(audioGroups[i].name, audioGroups[i]);
         }

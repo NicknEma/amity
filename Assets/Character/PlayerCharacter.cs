@@ -1,11 +1,12 @@
 using UnityEngine.InputSystem;
 using UnityEngine;
-using System;
 
 namespace Amity
 {
 	public class PlayerCharacter : MonoBehaviour
     {
+		#region FIELDS
+
 		[Header("General")]
 		public Animator animator;
 		public AudioEmitter audioEmitter;
@@ -29,9 +30,9 @@ namespace Amity
 
 		public CharacterState currentState;
 
-		public event Action<int> onDirectionChanged;
+		#endregion
 
-		private int currentDirection;
+		#region PRIVATE_METHODS
 
 		private void Awake() {
 			currentState = new GroundedState(this);
@@ -53,8 +54,8 @@ namespace Amity
 			SwitchTo(currentState.OnPhysicsUpdate());
 		}
 
-		private void OnCrouch() {
-			SwitchTo(currentState.OnCrouch());
+		private void OnPound() {
+			SwitchTo(currentState.OnPound());
 		}
 
 		private void OnJump() {
@@ -62,12 +63,8 @@ namespace Amity
 		}
 
 		private void OnRun(InputValue inputValue) {
-			int newDirection = (int) inputValue.Get<float>();
-			if (newDirection == currentDirection)
-				return;
-			currentDirection = newDirection;
-			onDirectionChanged?.Invoke(newDirection);
-			SwitchTo(currentState.OnRun(newDirection));
+			int direction = (int) inputValue.Get<float>();
+			SwitchTo(currentState.OnRun(direction));
 		}
 
 		private void SwitchTo(CharacterState newState) {
@@ -78,5 +75,7 @@ namespace Amity
 			currentState = newState;
 			currentState.OnEnter();
 		}
+
+		#endregion
 	}
 }

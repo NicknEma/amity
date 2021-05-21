@@ -6,8 +6,13 @@ namespace Amity
     {
         public FloatingState(PlayerCharacter character) : base(character) { ; }
 
-        public override void OnEnter() {
-            NotifyListeners(this);
-        }
-    }
+		public override void OnEnter() {
+			character.animator.SetInteger("Vertical Speed", 0);
+			character.animator.SetBool("Is On Ground", false);
+		}
+
+		public override CharacterState OnPound() {
+			return new PoundingState(character);
+		}
+	}
 }

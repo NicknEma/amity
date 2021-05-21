@@ -59,11 +59,14 @@ namespace Amity
 		/// </summary>
 		/// <param name="source">The Audio Source from which to play the Audio Clip.</param>
 		public void PlayFrom(AudioSource source) {
-			int index = -1;
+			if (clips.Length == 0)
+				return;
+
+			int index = 0;
 			switch (selectMode) {
 				case AudioSelectMode.Random: {
 					do {
-						index = Random.Range(0, clips.Length);
+						index = Random.Range(0, clips.Length-1);
 					} while (index == lastPlayed);
 					break;
 				}
@@ -74,6 +77,7 @@ namespace Amity
 					index = lastPlayed;
 					break;
 				}
+				default: return;
 			}
 
 			source.PlayOneShot(clips[index], volume);

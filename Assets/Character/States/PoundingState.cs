@@ -7,8 +7,9 @@ namespace Amity
         public PoundingState(PlayerCharacter character) : base(character) { ; }
 
         public override void OnEnter() {
-            NotifyListeners(this);
             character.rigidbody.velocity = new Vector2(0f, -15f);
+
+            character.animator.SetInteger("Vertical Speed", -2);
         }
 
 		public override CharacterState OnPhysicsUpdate() {
