@@ -2,31 +2,50 @@ using UnityEngine;
 
 namespace Amity
 {
+	/// <summary>
+	/// Manages a set of AudioClips that all represent the same sound type (ScriptableObject)
+	/// </summary>
 	[CreateAssetMenu(order = 51)]
 	public class AudioGroup : ScriptableObject
     {
-		#region PUBLIC_FIELDS
+		#region PROPERTIES
 
 		/// <summary>
-		/// The method used to select an AudioClip from the <c>clips</c> array.
+		/// Gets or sets how the next Audio Clip will be chosen from the Group.
 		/// </summary>
-		public AudioSelectMode selectMode;
+		public AudioSelectMode SelectMode {
+			get {
+				return selectMode;
+			}
+			set {
+				selectMode = value;
+			}
+		}
 
 		/// <summary>
-		/// The volume at which the AudioClip will be played.
+		/// Gets or sets the volume at which to play the Audio Clips.
 		/// </summary>
-        [Range(0.0f, 1.0f)]
-		public float volume = 0.5f;
-
-		/// <summary>
-		/// Array containing all the possible clips that can be played by this Group.
-		/// </summary>
-		[Space]
-        public AudioClip[] clips;
+		public float Volume {
+			get {
+				return volume;
+			}
+			set {
+				volume = value;
+			}
+		}
 
 		#endregion
 
-		#region PRIVATE_FIELDS
+		#region FIELDS
+
+		[SerializeField, Tooltip("The rule that states how the next Audio Clip will be chosen from the Group.")]
+		private AudioSelectMode selectMode;
+
+		[SerializeField, Range(0.0f, 1.0f), Tooltip("The volume at which to play the Audio Clips.")]
+		private float volume = 0.5f;
+
+		[SerializeField, Space, Tooltip("Array of all the possible clips that can be played by this Audio Group.")]
+		private AudioClip[] clips;
 
 		private int lastPlayed = -1;
 
@@ -35,10 +54,10 @@ namespace Amity
 		#region PUBLIC_METHODS
 
 		/// <summary>
-		/// Plays an AudioClip from the passed AudioSource. The clip is automatically
+		/// Plays an Audio Clip from the passed Audio Source. The clip is automatically
 		/// selected from the class' <c>clips</c> field.
 		/// </summary>
-		/// <param name="source">The AudioSource from which to play the AudioClip.</param>
+		/// <param name="source">The Audio Source from which to play the Audio Clip.</param>
 		public void PlayFrom(AudioSource source) {
 			int index = -1;
 			switch (selectMode) {
