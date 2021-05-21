@@ -31,7 +31,7 @@ namespace Amity
         [SerializeField, Tooltip("Set whether the sound should play through an Audio Mixer first or directly to the Audio Listener.")]
         private AudioMixerGroup output;
 
-        [SerializeField, Tooltip("Array of Audio Groups that the Game Object will be able to play.")]
+        [SerializeField, Space(5), Tooltip("Array of Audio Groups that the Game Object will be able to play.")]
         private AudioGroup[] audioGroups;
 
         private Dictionary<string, AudioGroup> clips;

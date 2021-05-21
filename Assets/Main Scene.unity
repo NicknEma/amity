@@ -840,7 +840,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87724114a2e4f90499bb75fd5a903eca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  output: {fileID: 0}
+  output: {fileID: -8013388972284587831, guid: 6c20aa0c22f233d4cbea37b1169a461c, type: 2}
   audioGroups: []
 --- !u!1 &2002903339
 GameObject:
