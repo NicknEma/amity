@@ -13,7 +13,7 @@ namespace Amity
         /// <summary>
         /// Field used for assigning AudioGroups from the Inspector
         /// </summary>
-		public AudioAsset[] audioAssets;
+		public AudioGroup[] audioAssets;
 
 		#endregion
 
@@ -48,7 +48,7 @@ namespace Amity
         private void InitializeDictionary() {
             clips = new Dictionary<string, AudioGroup>();
             for (int i = 0; i < audioAssets.Length; i++)
-                clips.Add(audioAssets[i].assetName, audioAssets[i].group);
+                clips.Add(audioAssets[i].name, audioAssets[i]);
         }
 
 		#endregion
