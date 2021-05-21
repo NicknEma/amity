@@ -556,7 +556,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 442516588}
-  audioHandler: {fileID: 1937105899}
+  audioEmitter: {fileID: 1937105899}
   playerInput: {fileID: 772111697}
   footHitbox: {fileID: 772111700}
   boxCollider: {fileID: 772111696}
