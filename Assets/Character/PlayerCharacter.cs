@@ -52,7 +52,6 @@ namespace Amity
 		#region PUBLIC_METHODS
 
 		public void OnTwinHidden() {
-			// Debug.Log($"{this}: OnShow");
 			transform.position = twin.transform.position;
 			SwitchTo(new JumpingState(this));
 		}
@@ -60,12 +59,6 @@ namespace Amity
 		#endregion
 
 		#region PRIVATE_METHODS
-
-		//temporary
-		[ContextMenu("Print State")]
-		private void PrintState() {
-			Debug.Log(currentState);
-		}
 
 		private void Awake() {
 			currentState = (CharacterState) System.Activator.CreateInstance(initialState, new PlayerCharacter[] { this });
