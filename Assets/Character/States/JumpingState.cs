@@ -7,7 +7,7 @@ namespace Amity
 		public JumpingState(PlayerCharacter character) : base(character) { ; }
 
 		public override void OnEnter() {
-			character.rigidbody.AddForce(new Vector2(0f, character.jumpForce), ForceMode2D.Impulse);
+			character.rigidbody.AddForce(new Vector2(0f, character.jumpForce * character.GravityScale), ForceMode2D.Impulse);
 
 			character.audioEmitter.PlaySelected("Jumps");
 			character.animator.SetInteger("Vertical Speed", 1);
@@ -15,7 +15,7 @@ namespace Amity
 		}
 
 		public override CharacterState OnPhysicsUpdate() {
-			if (character.rigidbody.velocity.y < 0f)
+			if (character.rigidbody.velocity.y * character.GravityScale < 0f)
 				return new FallingState(character);
 			return null;
 		}

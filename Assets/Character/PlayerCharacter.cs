@@ -1,10 +1,23 @@
 using UnityEngine.InputSystem;
+using TypeReferences;
 using UnityEngine;
 
 namespace Amity
 {
 	public class PlayerCharacter : MonoBehaviour
-    {
+	{
+		#region PROPERTIES
+
+		public CharacterState CurrentState => currentState;
+
+		public int GravityScale {
+			get {
+				return (int) Mathf.Clamp(rigidbody.gravityScale, -1, 1);
+			}
+		}
+
+		#endregion
+
 		#region FIELDS
 
 		[Header("General")]
@@ -19,23 +32,43 @@ namespace Amity
 		public BoxCollider2D boxCollider;
 		public new Rigidbody2D rigidbody;
 
-		[Header("Jumping")]
+		[Header("Movement")]
+		public float poundSpeed;
 		public float jumpForce;
-
-		[Header("Running")]
 		public float runSpeed;
 
 		[Header("Twin")]
 		public bool hasTwin;
+		public GameObject twin;
 
-		public CharacterState currentState;
+		[Header("State Machine")]
+		[ClassExtends(typeof(CharacterState))]
+		public ClassTypeReference initialState;
+
+		private CharacterState currentState;
+
+		#endregion
+
+		#region PUBLIC_METHODS
+
+		public void OnTwinHidden() {
+			// Debug.Log($"{this}: OnShow");
+			transform.position = twin.transform.position;
+			SwitchTo(new JumpingState(this));
+		}
 
 		#endregion
 
 		#region PRIVATE_METHODS
 
+		//temporary
+		[ContextMenu("Print State")]
+		private void PrintState() {
+			Debug.Log(currentState);
+		}
+
 		private void Awake() {
-			currentState = new GroundedState(this);
+			currentState = (CharacterState) System.Activator.CreateInstance(initialState, new PlayerCharacter[] { this });
 		}
 
 		private void OnEnable() {
