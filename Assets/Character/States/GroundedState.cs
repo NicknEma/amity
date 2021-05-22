@@ -12,6 +12,12 @@ namespace Amity
 			character.animator.SetBool("Is On Ground", true);
 		}
 
+		public override CharacterState OnPhysicsUpdate() {
+			if (!character.footHitbox.isHitting)
+				return new FallingState(character);
+			return null;
+		}
+
 		public override CharacterState OnJump() {
 			return new JumpingState(character);
 		}
