@@ -4,12 +4,8 @@ namespace Amity
 {
 #if UNITY_EDITOR
 	[ExecuteAlways]
-    public class BoxCollider2DDrawer : MonoBehaviour
-    {
-		private static readonly Color defaultColliderColor = new Color(135, 255, 170);
-
-		public Color lineColor = defaultColliderColor;
-
+    public class BoxCollider2DDrawer : Collider2DDrawer
+	{
 		public BoxCollider2D[] targets;
 
 		private void Awake() {
@@ -21,7 +17,6 @@ namespace Amity
 			for (int i = 0; i < targets.Length; i++) {
 				if (targets[i] == null)
 					continue;
-				// BoxCollider2D target = targets[i];
 				DrawBox(targets[i].transform.position, targets[i].size / 2, lineColor);
 			}
 		}
@@ -39,14 +34,5 @@ namespace Amity
 			}
 		}
 	}
-
-	/*
-	[System.Serializable]
-	public class BoxDisplay
-	{
-		public BoxCollider2D boxCollider;
-		public Color displayColor = new Color(135, 255, 170);
-	}
-	*/
 #endif
 }
