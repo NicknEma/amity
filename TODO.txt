@@ -11,7 +11,7 @@ CLIPPING ALGORITHM
 - Implement third phase and test
 
 CLIPPABLE COLLIDER
-- Translate algorithm to C#
+- Translate algorithm to C#					<---
 - Implement 'edge closer'
 - Implement in-scene collider drawer
 
@@ -34,3 +34,6 @@ GAMEPLAY
 CAMERA
 - Implement Shake Trigger
 - Refactor Camera Shake API
+
+DESIGN
+- Build the prototype and share					<---
