@@ -26,7 +26,7 @@ ANIMATION
 
 CHARACTER FSM
 - [DONE] Add calls to Audio and Anim functions
-- Implement Twin mechanic					<---
+- [DONE] Implement Twin mechanic
 
 GAMEPLAY
 - Implement Move Trigger (rough)
