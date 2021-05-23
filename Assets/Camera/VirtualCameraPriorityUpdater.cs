@@ -8,7 +8,7 @@ namespace Amity
 		#region FIELDS
 
 		[SerializeField]
-		private CinemachineVirtualCamera camera;
+		private CinemachineVirtualCamera virtualCamera;
 
 		[SerializeField, Space]
 		private PlayerCharacter target;
@@ -22,9 +22,9 @@ namespace Amity
 				return;
 
 			if (target.CurrentState.GetType() == typeof(HiddenState)) {
-				camera.m_Priority = 0;
+				virtualCamera.m_Priority = 0;
 			} else {
-				camera.m_Priority = 10;
+				virtualCamera.m_Priority = 10;
 			}
 		}
 
