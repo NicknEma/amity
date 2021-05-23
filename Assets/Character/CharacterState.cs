@@ -14,6 +14,6 @@ namespace Amity
 		public virtual CharacterState OnPhysicsUpdate() { return null; }
 		public virtual CharacterState OnPound() { return null; }
 		public virtual CharacterState OnJump() { return null; }
-		public virtual CharacterState OnRun(int direction) { return null; }
+		public virtual CharacterState OnRun() { return null; }
 	}
 }

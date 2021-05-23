@@ -47,6 +47,8 @@ namespace Amity
 
 		private CharacterState currentState;
 
+		public int CurrentHorizontalInput { get; private set; }
+
 		#endregion
 
 		#region PUBLIC_METHODS
@@ -89,8 +91,8 @@ namespace Amity
 		}
 
 		private void OnRun(InputValue inputValue) {
-			int direction = (int) inputValue.Get<float>();
-			SwitchTo(currentState.OnRun(direction));
+			CurrentHorizontalInput = (int) inputValue.Get<float>();
+			SwitchTo(currentState.OnRun());
 		}
 
 		private void SwitchTo(CharacterState newState) {
