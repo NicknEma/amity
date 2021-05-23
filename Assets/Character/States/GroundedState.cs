@@ -9,7 +9,6 @@ namespace Amity
 		public override void OnEnter() {
 			character.audioEmitter.PlaySelected("Landings");
 			character.animator.SetInteger("Vertical Speed", 0);
-			//character.animator.SetBool("Is On Ground", true);
 		}
 
 		public override CharacterState OnPhysicsUpdate() {
@@ -26,15 +25,5 @@ namespace Amity
 		public override CharacterState OnJump() {
 			return new JumpingState(character);
 		}
-
-		/*
-		public override CharacterState OnRun() {
-			Vector2 speed = new Vector2(character.runSpeed * character.CurrentHorizontalInput, character.rigidbody.velocity.y);
-			character.rigidbody.velocity = speed;
-
-			character.animator.SetInteger("Horizontal Speed", (int) speed.x);
-			return null;
-		}
-		*/
 	}
 }

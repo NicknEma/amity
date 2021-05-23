@@ -67,6 +67,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4610090125972944927, guid: bfd70c036d0b34c4c949d72817263513, type: 3}
+      propertyPath: initialState._classRef
+      value: Amity.HiddenState, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 4610090126176026918, guid: bfd70c036d0b34c4c949d72817263513, type: 3}
       propertyPath: m_LocalScale.y
       value: -1
