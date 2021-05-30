@@ -218,8 +218,8 @@ SpriteShapeRenderer:
   m_ShapeTexture: {fileID: 2800000, guid: b281b91a70a624a0da1c43adc1c30c7b, type: 3}
   m_Sprites: []
   m_LocalAABB:
-    m_Center: {x: 3.000002, y: 10.000002, z: 0}
-    m_Extent: {x: 20.000004, y: 15.000002, z: 0}
+    m_Center: {x: 0.5000019, y: 5.500002, z: 0}
+    m_Extent: {x: 22.500004, y: 19.500004, z: 0}
 --- !u!68 &13519838
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -236,8 +236,8 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -17, y: -5}
-  - {x: -17, y: 8}
+  - {x: -22, y: -14}
+  - {x: -22, y: 8}
   - {x: -9, y: 8}
   - {x: -9, y: 5}
   - {x: -4, y: 5}
@@ -255,10 +255,10 @@ EdgeCollider2D:
   - {x: -3, y: 13}
   - {x: -3, y: 25}
   - {x: 23, y: 25}
-  - {x: 23, y: -5}
-  - {x: -15.056296, y: -5}
-  - {x: -16.490372, y: -5}
-  - {x: -17, y: -5}
+  - {x: 23, y: -14}
+  - {x: -19.813332, y: -14}
+  - {x: -21.426666, y: -14}
+  - {x: -22, y: -14}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -278,7 +278,7 @@ MonoBehaviour:
   m_Spline:
     m_IsOpenEnded: 0
     m_ControlPoints:
-    - position: {x: -17, y: -5, z: 0}
+    - position: {x: -22, y: -14, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
@@ -288,7 +288,7 @@ MonoBehaviour:
       spriteIndex: 0
       corner: 1
       m_CornerMode: 2
-    - position: {x: -17, y: 8, z: 0}
+    - position: {x: -22, y: 8, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
@@ -468,7 +468,7 @@ MonoBehaviour:
       spriteIndex: 0
       corner: 1
       m_CornerMode: 1
-    - position: {x: 23, y: -5, z: 0}
+    - position: {x: 23, y: -14, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
@@ -1124,7 +1124,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 1848432817}
   m_Lens:
-    FieldOfView: 65
+    FieldOfView: 100
     OrthographicSize: 10
     NearClipPlane: 0.01
     FarClipPlane: 5000
@@ -1853,7 +1853,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6878820855508662308, guid: 7c6b8504be7ae8c4bba379c7f871a597, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7864859630019159929, guid: 7c6b8504be7ae8c4bba379c7f871a597, type: 3}
       propertyPath: m_RootOrder
@@ -1865,7 +1865,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7864859630019159929, guid: 7c6b8504be7ae8c4bba379c7f871a597, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.5
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7864859630019159929, guid: 7c6b8504be7ae8c4bba379c7f871a597, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2239,7 +2239,7 @@ Camera:
     height: 1
   near clip plane: 0.01
   far clip plane: 5000
-  field of view: 65
+  field of view: 100
   orthographic: 0
   orthographic size: 10
   m_Depth: 0
@@ -2344,7 +2344,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 772111699}
   m_Lens:
-    FieldOfView: 65
+    FieldOfView: 100
     OrthographicSize: 10
     NearClipPlane: 0.01
     FarClipPlane: 5000
