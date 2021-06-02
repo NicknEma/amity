@@ -24,8 +24,8 @@ namespace Amity
 			return null;
 		}
 
-		public override CharacterState OnPound() {
-			return new PoundingState(character);
+		public override CharacterState OnPound(int input = 0) {
+			return new PoundingState(character, input);
 		}
 	}
 }

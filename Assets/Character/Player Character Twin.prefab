@@ -7,6 +7,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 294763906395762012, guid: bfd70c036d0b34c4c949d72817263513, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 294763906395762012, guid: bfd70c036d0b34c4c949d72817263513, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4610090125972944898, guid: bfd70c036d0b34c4c949d72817263513, type: 3}
       propertyPath: m_GravityScale
       value: -3
@@ -68,6 +76,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4610090125972944927, guid: bfd70c036d0b34c4c949d72817263513, type: 3}
+      propertyPath: twin
+      value: 
+      objectReference: {fileID: 4610090125972944899, guid: bfd70c036d0b34c4c949d72817263513, type: 3}
+    - target: {fileID: 4610090125972944927, guid: bfd70c036d0b34c4c949d72817263513, type: 3}
       propertyPath: initialState._classRef
       value: Amity.HiddenState, Assembly-CSharp
       objectReference: {fileID: 0}
@@ -75,5 +87,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: -1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8910012584199909881, guid: bfd70c036d0b34c4c949d72817263513, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.5
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8910012584199909881, guid: bfd70c036d0b34c4c949d72817263513, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: bfd70c036d0b34c4c949d72817263513, type: 3}

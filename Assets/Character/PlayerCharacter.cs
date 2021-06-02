@@ -29,8 +29,10 @@ namespace Amity
 
 		[Header("Physics")]
 		public OverlapChecker2D footHitbox;
-		public BoxCollider2D boxCollider;
+		public new Collider2D collider;
 		public new Rigidbody2D rigidbody;
+		public PhysicsMaterial2D lowFriction;
+		public PhysicsMaterial2D highFriction;
 
 		[Header("Movement")]
 		public float poundSpeed;
@@ -38,7 +40,7 @@ namespace Amity
 		public float runSpeed;
 
 		[Header("Twin")]
-		public bool hasTwin;
+		public bool requiresSwitcher;
 		public GameObject twin;
 
 		[Header("State Machine")]
@@ -83,7 +85,7 @@ namespace Amity
 		}
 
 		private void OnPound() {
-			SwitchTo(currentState.OnPound());
+			SwitchTo(currentState.OnPound(CurrentHorizontalInput));
 		}
 
 		private void OnJump() {
@@ -102,6 +104,15 @@ namespace Amity
 			currentState.OnExit();
 			currentState = newState;
 			currentState.OnEnter();
+		}
+
+		#endregion
+
+		#region DEBUGGING_STUFF
+
+		[ContextMenu("Print Current State")]
+		private void PrintCurrentState() {
+			Debug.Log(currentState.ToString());
 		}
 
 		#endregion

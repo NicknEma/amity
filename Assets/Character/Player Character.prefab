@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4610090124684273319}
   - component: {fileID: 4610090124684273318}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Audio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,13 +58,12 @@ GameObject:
   - component: {fileID: 4610090125972944926}
   - component: {fileID: 4610090125972944927}
   - component: {fileID: 4610090125972944924}
-  - component: {fileID: 4610090125972944920}
   - component: {fileID: 4610090125972944921}
-  - component: {fileID: 4610090125972944925}
+  - component: {fileID: 294763906395762012}
   - component: {fileID: 4610090125972944898}
   m_Layer: 3
   m_Name: Player Character
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,13 +100,15 @@ MonoBehaviour:
   audioEmitter: {fileID: 4610090124684273318}
   playerInput: {fileID: 4610090125972944924}
   footHitbox: {fileID: 4610090125972944921}
-  boxCollider: {fileID: 4610090125972944925}
+  collider: {fileID: 294763906395762012}
   rigidbody: {fileID: 4610090125972944898}
+  lowFriction: {fileID: 6200000, guid: 821ae75f17571684dbca51cca128aed4, type: 2}
+  highFriction: {fileID: 6200000, guid: 31dfca21d1b56ea449a08122b3c81e54, type: 2}
   poundSpeed: 15
   jumpForce: 16
-  runSpeed: 6
-  hasTwin: 1
-  twin: {fileID: 0}
+  runSpeed: 8
+  requiresSwitcher: 1
+  twin: {fileID: 790222981371423255, guid: ef06791e59b28364fb0fb1cab711c91a, type: 3}
   initialState:
     _classRef: Amity.GroundedState, Assembly-CSharp
 --- !u!114 &4610090125972944924
@@ -140,21 +141,6 @@ MonoBehaviour:
   m_DefaultActionMap: Character
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &4610090125972944920
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4610090125972944899}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52853753325efba4d92e04f57156f332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lineColor: {r: 0.4, g: 0.7490196, b: 0.5019608, a: 1}
-  targets:
-  - {fileID: 4610090125972944925}
 --- !u!114 &4610090125972944921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,7 +157,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   offset: {x: 0, y: 0.45}
-  size: {x: 0.95, y: 1}
+  size: {x: 1, y: 1}
   onOverlapEnter:
     m_PersistentCalls:
       m_Calls: []
@@ -179,7 +165,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   drawHitbox: 1
---- !u!61 &4610090125972944925
+--- !u!61 &294763906395762012
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -188,7 +174,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 4610090125972944899}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 821ae75f17571684dbca51cca128aed4, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -237,7 +223,7 @@ GameObject:
   - component: {fileID: 4610090126176026918}
   - component: {fileID: 4610090126176026912}
   - component: {fileID: 4610090126176026913}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
