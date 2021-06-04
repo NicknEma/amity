@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using Cinemachine;
 
-namespace Amity.Assets.Game_Feel
+namespace Amity
 {
 	static class Scene
 	{
+		#region PROPERTIES
+
 		/// <summary>
 		/// Gets a reference to the scene's main camera (cached after first use).
 		/// </summary>
@@ -16,15 +18,25 @@ namespace Amity.Assets.Game_Feel
 			}
 		}
 
-		private static Camera mainCamera;
-
 		/// <summary>
-		/// Gets a reference to the scene's main camera (not cached).
+		/// Gets a reference to the scene's main Impulse Source (cached after first use).
 		/// </summary>
-		public static CinemachineVirtualCamera ActiveVirtualCamera {
+		public static CinemachineImpulseSource ImpulseSource {
 			get {
-				return (CinemachineVirtualCamera) MainCamera.GetComponent<CinemachineBrain>().ActiveVirtualCamera;
+				if (impulseSource == null)
+					impulseSource = Object.FindObjectOfType<CinemachineImpulseSource>();
+				return impulseSource;
 			}
 		}
+
+		#endregion
+
+		#region FIELDS
+
+		private static Camera mainCamera;
+
+		private static CinemachineImpulseSource impulseSource;
+
+		#endregion
 	}
 }
