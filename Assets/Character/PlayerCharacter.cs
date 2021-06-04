@@ -49,6 +49,8 @@ namespace Amity
 		public ClassTypeReference initialState;
 
 		[Header("Unity Events")]
+		public UnityEvent onAppear;
+		public UnityEvent onDisappear;
 		public UnityEvent onGroundPound;
 
 		private CharacterState currentState;

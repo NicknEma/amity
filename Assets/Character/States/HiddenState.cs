@@ -7,6 +7,8 @@ namespace Amity
         public HiddenState(PlayerCharacter character) : base(character) { ; }
 
 		public override void OnEnter() {
+			character.onDisappear.Invoke();
+
 			character.playerInput.enabled = false;
 			character.collider.enabled = false;
 			character.rigidbody.isKinematic = true;
@@ -15,6 +17,8 @@ namespace Amity
 		}
 
 		public override void OnExit() {
+			character.onAppear.Invoke();
+
 			character.playerInput.enabled = true;
 			character.collider.enabled = true;
 			character.rigidbody.isKinematic = false;
