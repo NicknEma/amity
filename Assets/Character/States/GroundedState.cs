@@ -14,6 +14,7 @@ namespace Amity
 		// TODO: Lerp position instead of assigning it directly (both here and in OnPhysicsUpdate)
 		public override void OnExit() {
 			character.animator.transform.localPosition = Vector2.zero;
+			SetMaterial(1);
 		}
 
 		public override CharacterState OnPhysicsUpdate() {
