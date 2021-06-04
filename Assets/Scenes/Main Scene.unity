@@ -1386,7 +1386,7 @@ GameObject:
   - component: {fileID: 943275047}
   - component: {fileID: 943275046}
   m_Layer: 0
-  m_Name: World Confiner
+  m_Name: World Limit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1401,7 +1401,7 @@ EdgeCollider2D:
   m_GameObject: {fileID: 943275045}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 821ae75f17571684dbca51cca128aed4, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
