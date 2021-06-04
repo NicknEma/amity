@@ -21,7 +21,7 @@ namespace Amity
 		// TODO: Remove repeated code
 		public override CharacterState OnPhysicsUpdate() {
             if (character.footHitbox.isHitting) {
-                Scene.MainCamera.Shake();
+                character.onGroundPound.Invoke();                   // Triggers Camera Shake
 
                 if (!character.requiresSwitcher) {
                     character.twin.GetComponent<PlayerCharacter>().OnTwinHidden();

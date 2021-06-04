@@ -1,4 +1,5 @@
 using UnityEngine.InputSystem;
+using UnityEngine.Events;
 using TypeReferences;
 using UnityEngine;
 
@@ -46,6 +47,9 @@ namespace Amity
 		[Header("State Machine")]
 		[ClassExtends(typeof(CharacterState))]
 		public ClassTypeReference initialState;
+
+		[Header("Unity Events")]
+		public UnityEvent onGroundPound;
 
 		private CharacterState currentState;
 
