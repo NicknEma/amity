@@ -11,22 +11,19 @@ CLIPPING ALGORITHM
 - Implement third phase and test
 
 CLIPPABLE COLLIDER
-- Translate algorithm to C#					<---
+- Translate algorithm to C#
 - Implement 'edge closer'
 - Implement in-scene collider drawer
 
 AUDIO
-- [DONE] Refactor AudioGroups management, use asset name as id
 - Implement music fading
+- Make / download some sound effects
 
 ANIMATION
-- [DONE] Start learning OpenToonz
-- [DONE] Make quick temp animations
-- [DONE] Add Character Animator states and transitions
+- Make idle animation
 
-CHARACTER FSM
-- [DONE] Add calls to Audio and Anim functions
-- [DONE] Implement Twin mechanic
+CHARACTER
+- Finish slope movement
 
 GAMEPLAY
 - Implement Move Trigger (rough)
@@ -36,4 +33,5 @@ CAMERA
 - Refactor Camera Shake API
 
 DESIGN
-- Build the prototype and share					<---
+- Design some levels
+
