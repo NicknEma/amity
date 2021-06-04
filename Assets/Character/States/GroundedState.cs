@@ -18,19 +18,17 @@ namespace Amity
 
 		public override CharacterState OnPhysicsUpdate() {
 			Vector2 normal = GetGroundNormal();
+			Vector2 tangent = -Vector2.Perpendicular(normal);
 
-			Vector2 speed = new Vector2(character.runSpeed * character.CurrentHorizontalInput,
-				character.rigidbody.velocity.y);
+			Vector2 speed = new Vector2(
+				character.runSpeed * tangent.x * character.CurrentHorizontalInput,
+				character.runSpeed * tangent.y * character.CurrentHorizontalInput);
+
 			character.rigidbody.velocity = speed;
 
 			SetMaterial(character.CurrentHorizontalInput);
 
-			character.animator.SetInteger("Horizontal Speed", (int) speed.x);
-
-			if (normal != Vector2.up)
-				character.animator.transform.localPosition = new Vector2(0.0f, -0.3f);
-			else
-				character.animator.transform.localPosition = Vector2.zero;
+			UpdateGraphics(speed, normal);
 
 			if (!character.footHitbox.isHitting)
 				return new FallingState(character);
@@ -38,7 +36,8 @@ namespace Amity
 		}
 
 		private Vector2 GetGroundNormal() {
-			Vector2 origin = (Vector2) character.transform.position; float distance = 0.5f;
+			float distance = 0.5f;
+			Vector2 origin = character.transform.position;
 			RaycastHit2D hit = Physics2D.Raycast(origin, Vector2.down, distance, 1 << LayerMask.NameToLayer("Ground"));
 
 			Vector2 normal = hit.normal == Vector2.zero ? Vector2.up : hit.normal.normalized;
@@ -47,7 +46,6 @@ namespace Amity
 			Debug.DrawRay(origin, Vector2.down * distance, Color.red);
 			Debug.DrawRay(origin, normal, Color.yellow);
 #endif
-
 			return normal;
 		}
 
@@ -56,6 +54,15 @@ namespace Amity
 				character.rigidbody.sharedMaterial = character.highFriction;
 			else
 				character.rigidbody.sharedMaterial = character.lowFriction;
+		}
+
+		private void UpdateGraphics(Vector2 speed, Vector2 normal) {
+			character.animator.SetInteger("Horizontal Speed", (int) speed.x);
+
+			if (normal != Vector2.up)
+				character.animator.transform.localPosition = new Vector2(0.0f, -0.3f);
+			else
+				character.animator.transform.localPosition = Vector2.zero;
 		}
 
 		public override CharacterState OnJump() {
