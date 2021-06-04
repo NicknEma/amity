@@ -98,6 +98,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 4610090126176026913}
   audioEmitter: {fileID: 4610090124684273318}
+  playerInput: {fileID: 4610090125972944924}
+  footHitbox: {fileID: 4610090125972944921}
+  collider: {fileID: 294763906395762012}
+  rigidbody: {fileID: 4610090125972944898}
+  lowFriction: {fileID: 6200000, guid: 821ae75f17571684dbca51cca128aed4, type: 2}
+  highFriction: {fileID: 6200000, guid: 31dfca21d1b56ea449a08122b3c81e54, type: 2}
+  poundSpeed: 15
+  jumpForce: 16
+  runSpeed: 8
+  requiresSwitcher: 1
+  twin: {fileID: 790222981371423255, guid: ef06791e59b28364fb0fb1cab711c91a, type: 3}
+  initialState:
+    _classRef: Amity.GroundedState, Assembly-CSharp
+  onAppear:
+    m_PersistentCalls:
+      m_Calls: []
+  onDisappear:
+    m_PersistentCalls:
+      m_Calls: []
   onGroundPound:
     m_PersistentCalls:
       m_Calls:
@@ -113,19 +132,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  playerInput: {fileID: 4610090125972944924}
-  footHitbox: {fileID: 4610090125972944921}
-  collider: {fileID: 294763906395762012}
-  rigidbody: {fileID: 4610090125972944898}
-  lowFriction: {fileID: 6200000, guid: 821ae75f17571684dbca51cca128aed4, type: 2}
-  highFriction: {fileID: 6200000, guid: 31dfca21d1b56ea449a08122b3c81e54, type: 2}
-  poundSpeed: 15
-  jumpForce: 16
-  runSpeed: 8
-  requiresSwitcher: 1
-  twin: {fileID: 790222981371423255, guid: ef06791e59b28364fb0fb1cab711c91a, type: 3}
-  initialState:
-    _classRef: Amity.GroundedState, Assembly-CSharp
 --- !u!114 &4610090125972944924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -300,7 +306,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 25
   m_Sprite: {fileID: -6561275623848050597, guid: 6dd04dafc65bcb141a3a4f44bed3ad77, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.24313726, g: 0.25882354, b: 0.29411766, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
