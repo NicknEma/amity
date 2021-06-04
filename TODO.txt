@@ -1,37 +1,13 @@
-CLIPPING ALGORITHM
-- Implement Path.insertAfter() and test
-- Implement tryIntersect() and test
-- Test checkAlphas()
-- Finish Phase 1 and test [a lot]
-- - -
-- Implement isPointInside() and test
-- Implement markEntries() and test
-- Test Phase 2
-- - -
-- Implement third phase and test
-
-CLIPPABLE COLLIDER
-- Translate algorithm to C#
-- Implement 'edge closer'
-- Implement in-scene collider drawer
-
-AUDIO
-- Implement music fading
-- Make / download some sound effects
-
-ANIMATION
-- Make idle animation
-
-CHARACTER
+XXX
 - Finish slope movement
-
-GAMEPLAY
-- Implement Move Trigger (rough)
-
-CAMERA
-- Implement Shake Trigger
-- Refactor Camera Shake API
-
-DESIGN
 - Design some levels
 
+XX
+- Implement Particles
+- Add music fading
+- Implement Move Trigger (rough)
+
+X
+- Make character animations
+- Make sound effects
+- Record music
