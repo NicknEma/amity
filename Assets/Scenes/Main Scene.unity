@@ -237,8 +237,8 @@ EdgeCollider2D:
   m_EdgeRadius: 0
   m_Points:
   - {x: -22, y: -14}
-  - {x: -22, y: 8}
-  - {x: -20, y: 8}
+  - {x: -22, y: 7.0696344}
+  - {x: -18.96909, y: 7.0773106}
   - {x: -4, y: 2}
   - {x: -4, y: 0}
   - {x: 4, y: 0}
@@ -287,7 +287,7 @@ MonoBehaviour:
       spriteIndex: 0
       corner: 1
       m_CornerMode: 2
-    - position: {x: -22, y: 8, z: 0}
+    - position: {x: -22, y: 7.0696344, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
@@ -297,16 +297,16 @@ MonoBehaviour:
       spriteIndex: 0
       corner: 1
       m_CornerMode: 1
-    - position: {x: -20, y: 8, z: 0}
+    - position: {x: -18.96909, y: 7.0773106, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
-      height: 0.1
+      height: 1
       bevelCutoff: 0
       bevelSize: 0
       spriteIndex: 0
       corner: 1
-      m_CornerMode: 2
+      m_CornerMode: 1
     - position: {x: -4, y: 2, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
